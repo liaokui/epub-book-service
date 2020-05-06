@@ -45,8 +45,8 @@ module.exports = appInfo => {
         // url: 'mongodb://127.0.0.1:27017/epubbook',
         url: 'mongodb://150.109.105.237:27017/epubbook',
         options: {
-          user: 'epubbookAdmin', // 数据库账号
-          pass: '362502', // 数据库密码
+          user: 'epubbookUser', // 数据库账号
+          pass: '123456', // 数据库密码
           useUnifiedTopology: true,
         },
       },
