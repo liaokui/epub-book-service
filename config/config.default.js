@@ -27,6 +27,12 @@ module.exports = appInfo => {
     domainWhiteList: [ '*' ], // ['http://localhost:8080']
   };
 
+  config.cluster = {
+    listen: {
+      path: '',
+      port: 7002,
+    },
+  };
 
   // add your user config here
   const userConfig = {
