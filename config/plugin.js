@@ -7,4 +7,3 @@ module.exports = {
     package: 'egg-mongoose',
   },
 };
-
