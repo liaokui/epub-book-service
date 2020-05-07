@@ -1,6 +1,10 @@
 'use strict';
 
 const Controller = require('egg').Controller;
+// node.js 文件操作对象
+const fs = require('fs');
+// node.js 路径操作对象
+const path = require('path');
 
 class BookController extends Controller {
 
@@ -49,13 +53,32 @@ class BookController extends Controller {
       data: {},
       msg: '删除成功',
     };
+    const list = await ctx.service.book.getDetail(id);
     const res = await ctx.service.book.delete(id);
     if (res.n === 0) {
       resMsg.msg = '图书id不存在';
       resMsg.status = 'error';
     }
+    const delEpub = path.join(this.config.baseDir, 'app' + list[0].url);
+    const delCover = path.join(this.config.baseDir, 'app' + list[0].cover);
+    try {
+      if (fs.existsSync(delEpub)) {
+        fs.unlinkSync(delEpub);
+      } else {
+        console.log('inexistence path：', delEpub);
+      }
+      if (fs.existsSync(delCover)) {
+        fs.unlinkSync(delCover);
+      } else {
+        console.log('inexistence path：', delCover);
+      }
+    } catch (error) {
+      console.log('del error', error);
+    }
+
     ctx.body = resMsg;
   }
+
 }
 
 module.exports = BookController;

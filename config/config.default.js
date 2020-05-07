@@ -20,7 +20,7 @@ module.exports = appInfo => {
 
   config.security = {
     csrf: {
-      enable: true,
+      enable: false,
       ignoreJSON: true,
     },
     // 允许访问接口的白名单
