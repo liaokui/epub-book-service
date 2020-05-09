@@ -98,8 +98,8 @@ class UploadController extends Controller {
       return;
     }
 
-
-    const coverBuffer = Buffer.from(cover.split('base64,')[1], 'base64');
+    const newCover = cover.replace(' ', '+');
+    const coverBuffer = Buffer.from(newCover.split('base64,')[1], 'base64');
     const coverStream = new Stream.PassThrough();
     coverStream.end(coverBuffer);
     const coverFileName = md5(title) + '.' + cover.split(';')[0].split('data:')[1].split('/')[1].toLocaleLowerCase();
