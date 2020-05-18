@@ -31,7 +31,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-epub-book-service",
+    "start": "MOCK_HOME_DIR=./mock_home egg-scripts start --daemon --title=egg-server-epub-book-service",
     "stop": "egg-scripts stop --title=egg-server-epub-book-service",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
