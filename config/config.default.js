@@ -20,8 +20,7 @@ module.exports = appInfo => {
 
   config.security = {
     csrf: {
-      enable: false,
-      ignoreJSON: true,
+      enable: true,
     },
     // 允许访问接口的白名单
     // domainWhiteList: [ '*' ], // ['http://localhost:8080']
