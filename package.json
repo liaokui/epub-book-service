@@ -32,7 +32,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-epub-book-service",
+    "start": "egg-scripts start --daemon --title=egg-server-epub-book-service --stdout=/home/lelk/app/services/epub-book-service/logs/epub-book-service/master-stdout.log --stderr=/home/lelk/app/services/epub-book-service/logs/epub-book-service/master-stderr.log",
     "stop": "egg-scripts stop --title=egg-server-epub-book-service",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
