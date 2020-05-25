@@ -80,7 +80,6 @@ class NoteController extends Controller {
       params.note = note;
     }
     const res = await ctx.service.note.update(id, bookId, params);
-    console.log(res);
     if (res.n === 0) {
       resMsg.msg = '更新失败';
       resMsg.status = 'error';

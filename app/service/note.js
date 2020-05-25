@@ -30,8 +30,6 @@ class NoteService extends Service {
   // 更新
   async update(id, bookId, params) {
     const { ctx } = this;
-    console.log(id);
-    console.log(params);
     return await ctx.model.Note.updateOne({ _id: id }, {
       ...params,
       updateTime: Date(),
